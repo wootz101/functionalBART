@@ -47,8 +47,8 @@ public:
    //get,set
    size_t getm() {return m;}
    void setm(size_t m);
-   void setdata(size_t p, size_t n, double *x, double *y, size_t nc=100);
-   void setdata(size_t p, size_t n, double *x, double *y, int* nc);
+   void setdata(size_t p, size_t n, std::vector<double*> x, double *y, size_t nc=100);
+   void setdata(size_t p, size_t n, std::vector<double*> x, double *y, int* nc);
    void setpi(pinfo& pi) {this->pi = pi;}
    void setprior(double alpha, double beta, double tau)
       {pi.alpha=alpha; pi.mybeta = beta; pi.tau=tau;}
@@ -68,7 +68,7 @@ public:
    void startdart() {this->dartOn=!(this->dartOn);}
    void settau(double tau) {pi.tau=tau;}
    tree& gettree(size_t i ) { return t[i];}
-   std::vector<xinfo>& getxinfo() {return xi;}
+   xinfo& getxinfo() {return xi;}
    void setxinfo(xinfo& _xi);
    std::vector<size_t>& getnv() {return nv;}
    std::vector<double>& getpv() {return pv;}
@@ -81,7 +81,7 @@ public:
          {t[i].death(nid,mu);}
    void pr();
    void tonull() {for(size_t i=0;i!=t.size();i++) t[i].tonull();}
-   void predict(size_t p, size_t n, double *x, double *fp);
+   void predict(size_t p, size_t n, std::vector<double*> x, double *fp);
    void draw(double sigma, rn& gen);
 //   void draw_s(rn& gen);
    double f(size_t i) {return allfit[i];}
@@ -93,7 +93,7 @@ protected:
    size_t p,n; //x has dim p, n obserations
    std::vector<double*> x; //____________________NEW LINE UPDAY++++E
    double *y;  //x is column stack, pxn
-   std::vector<xinfo> xi; //_____________________cutpoint info
+   xinfo xi; //cutpoint info; //_____________________cutpoint info
    //working
    double *allfit; //if the data is set, should be f(x)
    double *r;

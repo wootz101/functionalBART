@@ -21,9 +21,9 @@
 
 //--------------------------------------------------
 //constructor
-f_bart::f_bart():m(200),t(m),pi(),p(0),n(0),x(0),y(0),xi(),allfit(0),r(0),ftemp(0),di(),dartOn(false) {}
-f_bart::f_bart(size_t im):m(im),t(m),pi(),p(0),n(0),x(0),y(0),xi(),allfit(0),r(0),ftemp(0),di(),dartOn(false) {}
-f_bart::f_bart(const f_bart& ib):m(ib.m),t(m),pi(ib.pi),p(0),n(0),x(0),y(0),xi(),allfit(0),r(0),ftemp(0),di(),dartOn(false)
+f_bart::f_bart():m(200),t(m),pi(),p(0),n(0),x(m),y(0),xi(),allfit(0),r(0),ftemp(0),di(),dartOn(false) {}
+f_bart::f_bart(size_t im):m(im),t(m),pi(),p(0),n(0),x(),y(0),xi(m),allfit(0),r(0),ftemp(0),di(),dartOn(false) {}
+f_bart::f_bart(const f_bart& ib):m(ib.m),t(m),pi(ib.pi),p(0),n(0),x(m),y(0),xi(),allfit(0),r(0),ftemp(0),di(),dartOn(false)
 {
    this->t = ib.t;
 }
@@ -45,7 +45,8 @@ f_bart& f_bart::operator=(const f_bart& rhs)
 
       this->pi = rhs.pi;
 
-      p=0;n=0;x=0;y=0;
+      p=0;n=0; std::vector<double> x(m,0); y=0;
+
       xi.clear();
 
       if(allfit) {delete[] allfit; allfit=0;}
@@ -77,7 +78,7 @@ void f_bart::setxinfo(xinfo& _xi)
    }
 }
 //--------------------------------------------------
-void f_bart::setdata(size_t p, size_t n, double *x, double *y, size_t numcut)
+void f_bart::setdata(size_t p, size_t n, std::vector<double*> x, double *y, size_t numcut)
 {
   int* nc = new int[p];
   for(size_t i=0; i<p; ++i) nc[i]=numcut;
@@ -85,10 +86,13 @@ void f_bart::setdata(size_t p, size_t n, double *x, double *y, size_t numcut)
   delete [] nc;
 }
 
-void f_bart::setdata(size_t p, size_t n, double *x, double *y, int *nc)
+void f_bart::setdata(size_t p, size_t n, std::vector<double*> x, double *y, int *nc)
 {
    this->p=p; this->n=n; this->x=x; this->y=y;
-   if(xi.size()==0) makexinfo(p,n,&x[0],xi,nc);
+   for(size_t k=0;k<m;k++){
+     if(xi.size()==0) makexinfo(p,n, x[k],xi,nc);
+   }
+
 
    if(allfit) delete[] allfit;
    allfit = new double[n];
@@ -100,21 +104,23 @@ void f_bart::setdata(size_t p, size_t n, double *x, double *y, int *nc)
    if(ftemp) delete[] ftemp;
    ftemp = new double[n];
 
-   di.n=n; di.p=p; di.x = &x[0]; di.y=r;
+   di.n=n; di.p=p; di.x = x[0]; di.y=r;
    for(size_t j=0;j<p;j++){
      nv.push_back(0);
      pv.push_back(1/(double)p);
    }
 }
 //--------------------------------------------------
-void f_bart::predict(size_t p, size_t n, double *x, double *fp)
+void f_bart::predict(size_t p, size_t n, std::vector<double*> x, double *fp)
 //uses: m,t,xi
 {
    double *fptemp = new double[n];
 
    for(size_t j=0;j<n;j++) fp[j]=0.0;
    for(size_t j=0;j<m;j++) {
-      fit(t[j],xi,p,n,x,fptemp);
+
+      fit(t[j],xi,p,n, x[j] ,fptemp);
+
       for(size_t k=0;k<n;k++) fp[k] += fptemp[k];
    }
 
@@ -124,14 +130,18 @@ void f_bart::predict(size_t p, size_t n, double *x, double *fp)
 void f_bart::draw(double sigma, rn& gen)
 {
    for(size_t j=0;j<m;j++) {
-      fit(t[j],xi,p,n,x,ftemp);
+
+      fit(t[j],xi,p,n,x[j] ,ftemp);
+
       for(size_t k=0;k<n;k++) {
          allfit[k] = allfit[k]-ftemp[k];
          r[k] = y[k]-allfit[k];
       }
       bd(t[j],xi,di,pi,sigma,nv,pv,aug,gen);
       drmu(t[j],xi,di,pi,sigma,gen);
-      fit(t[j],xi,p,n,x,ftemp);
+
+      fit(t[j],xi,p,n,x[j],ftemp);
+
       for(size_t k=0;k<n;k++) allfit[k] += ftemp[k];
    }
    if(dartOn) {

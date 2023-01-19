@@ -39,9 +39,9 @@ void makexinfo(size_t p, size_t n, double *x, xinfo& xi, int *nc)
    double xx;
    for(size_t i=0;i<p;i++) {
       for(size_t j=0;j<n;j++) {
-         xx = *(x+p*j+i);
-         if(xx < minx[i]) minx[i]=xx;
-         if(xx > maxx[i]) maxx[i]=xx;
+        xx = *(x+p*j+i);
+        if(xx < minx[i]) minx[i]=xx;
+        if(xx > maxx[i]) maxx[i]=xx;
       }
    }
    //make grid of nc cutpoints between min and max for each x.
@@ -167,7 +167,7 @@ void drmu(tree& t, xinfo& xi, dinfo& di, pinfo& pi, double sigma, rn& gen)
    std::vector<double> syv;
    allsuff(t,xi,di,bnv,nv,syv);
 
-   for(tree::npv::size_type i=0;i!=bnv.size();i++) 
+   for(tree::npv::size_type i=0;i!=bnv.size();i++)
       bnv[i]->settheta(drawnodemu(nv[i],syv[i],pi.tau,sigma,gen));
 }
 //--------------------------------------------------
@@ -209,7 +209,7 @@ void bprop(tree& x, xinfo& xi, pinfo& pi, tree::npv& goodbots, double& PBx, tree
 	double smpgoodvars=0.; //P(picking a good var)
 	double smpbadvars=0.; //P(picking a bad var)
 //	size_t nbaddraws=0; //number of draws at a particular node
-	//this loop fills out badvars, pgoodvars, pbadvars, 
+	//this loop fills out badvars, pgoodvars, pbadvars,
 	//there may be a better way to do this...
 	for(size_t j=0;j<pv.size();j++){
 	  allvars.push_back(j);
@@ -232,13 +232,13 @@ void bprop(tree& x, xinfo& xi, pinfo& pi, tree::npv& goodbots, double& PBx, tree
 	  //nbaddraws=gen.geometric(); // draw G = g ~ Geom
 	  // for each bad variable, set its c_j equal to its expected count
 	  /*
-	    gen.set_wts(pbadvars); 
+	    gen.set_wts(pbadvars);
 	  for(size_t k=0;k!=nbaddraws;k++) {
 	    nv[badvars[gen.discrete()]]++;
 	    }
 	  */
 	  for(size_t j=0;j<nbadvars;j++)
-	    nv[badvars[j]]=nv[badvars[j]]+(1/smpgoodvars)*(pv[badvars[j]]/smpbadvars); 	  
+	    nv[badvars[j]]=nv[badvars[j]]+(1/smpgoodvars)*(pv[badvars[j]]/smpbadvars);
 	}
 /*
       size_t vi = floor(gen.uniform()*goodvars.size()); //index of chosen split variable
@@ -342,7 +342,7 @@ void dprop(tree& x, xinfo& xi, pinfo& pi,tree::npv& goodbots, double& PBx, tree:
       pr =  ((1.0-PGny)*PBy*Pboty)/(PGny*(1.0-PGlx)*(1.0-PGrx)*PDx*Pnogx);
 }
 //--------------------------------------------------
-//draw one mu from post 
+//draw one mu from post
 double drawnodemu(size_t n, double sy, double tau, double sigma, rn& gen)
 {
    double s2 = sigma*sigma;
@@ -383,7 +383,7 @@ void draw_theta0(bool const_theta, double& theta, std::vector<double>& lpv,
   if(!const_theta){
     size_t p=lpv.size();
     double sumlpv=0.,lse;
-    
+
     std::vector<double> lambda_g (1000,0.);
     std::vector<double> theta_g (1000,0.);
     std::vector<double> lwt_g (1000,0.);
@@ -394,15 +394,15 @@ void draw_theta0(bool const_theta, double& theta, std::vector<double>& lpv,
       double theta_log_lik=lgamma(theta_g[k])-(double)p*lgamma(theta_g[k]/(double)p)+(theta_g[k]/(double)p)*sumlpv;
       double beta_log_prior=(a-1.)*log(lambda_g[k])+(b-1.)*log(1.-lambda_g[k]);
 //      cout << "SLP: " << sumlogpv << "\nTLL: " << theta_log_lik << "\nBLP: " << beta_log_prior << '\n';
-      lwt_g[k]=theta_log_lik+beta_log_prior;      
+      lwt_g[k]=theta_log_lik+beta_log_prior;
     }
     lse=log_sum_exp(lwt_g);
     for(size_t k=0;k<1000;k++) {
       lwt_g[k]=exp(lwt_g[k]-lse);
 //      cout << "LWT: " << lwt_g[k] << '\n';
     }
-    gen.set_wts(lwt_g);    
+    gen.set_wts(lwt_g);
     theta=theta_g[gen.discrete()];
-  } 
+  }
 }
 

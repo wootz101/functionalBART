@@ -57,7 +57,7 @@ void bprop(tree& x, xinfo& xi, pinfo& pi, tree::npv& goodbots, double& PBx, tree
 // death proposal
 void dprop(tree& x, xinfo& xi, pinfo& pi, tree::npv& goodbots, double& PBx, tree::tree_p& nx, double& pr, rn& gen);
 //--------------------------------------------------
-//draw one mu from post 
+//draw one mu from post
 double drawnodemu(size_t n, double sy, double tau, double sigma, rn& gen);
 //--------------------------------------------------
 //draw variable splitting probabilities from Dirichlet (Linero, 2018)

@@ -3,7 +3,7 @@
     "path": "~/Desktop/RCPP1/Fbart/src/cpbart.cpp",
     "project_path": "src/cpbart.cpp",
     "type": "cpp",
-    "hash": "1192235409",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1674003719826.0,
@@ -12,8 +12,8 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "294,24",
-        "scrollLine": "277"
+        "cursorPosition": "149,13",
+        "scrollLine": "141"
     },
     "folds": "",
     "lastKnownWriteTime": 1609812618,

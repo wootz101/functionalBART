@@ -254,8 +254,262 @@
         "hidden": false
     },
     {
+        "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bart_function.cpp",
+        "file_last_write": 1674157089.0,
+        "definitions": [
+            {
+                "usr": "c:@S@f_bart@F@operator=#&1$@S@f_bart#",
+                "kind": 7,
+                "parent_name": "f_bart",
+                "name": "operator=(const f_bart &)",
+                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bart_function.cpp",
+                "line": 39,
+                "column": 17,
+                "hidden": false
+            },
+            {
+                "usr": "c:@S@f_bart@F@setm#l#",
+                "kind": 7,
+                "parent_name": "f_bart",
+                "name": "setm(size_t)",
+                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bart_function.cpp",
+                "line": 61,
+                "column": 14,
+                "hidden": false
+            },
+            {
+                "usr": "c:@S@f_bart@F@setxinfo#&$@N@std@N@__1@S@vector>#$@N@std@N@__1@S@vector>#d#$@N@std@N@__1@S@allocator>#d#$@N@std@N@__1@S@allocator>#S2_#",
+                "kind": 7,
+                "parent_name": "f_bart",
+                "name": "setxinfo(xinfo &)",
+                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bart_function.cpp",
+                "line": 70,
+                "column": 14,
+                "hidden": false
+            },
+            {
+                "usr": "c:@S@f_bart@F@setdata#l#l#$@N@std@N@__1@S@vector>#*d#$@N@std@N@__1@S@allocator>#S1_#S1_#l#",
+                "kind": 7,
+                "parent_name": "f_bart",
+                "name": "setdata(size_t, size_t, std::vector<double *>, double *, size_t)",
+                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bart_function.cpp",
+                "line": 81,
+                "column": 14,
+                "hidden": false
+            },
+            {
+                "usr": "c:@S@f_bart@F@setdata#l#l#$@N@std@N@__1@S@vector>#*d#$@N@std@N@__1@S@allocator>#S1_#S1_#*I#",
+                "kind": 7,
+                "parent_name": "f_bart",
+                "name": "setdata(size_t, size_t, std::vector<double *>, double *, int *)",
+                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bart_function.cpp",
+                "line": 89,
+                "column": 14,
+                "hidden": false
+            },
+            {
+                "usr": "c:@S@f_bart@F@predict#l#l#$@N@std@N@__1@S@vector>#*d#$@N@std@N@__1@S@allocator>#S1_#S1_#",
+                "kind": 7,
+                "parent_name": "f_bart",
+                "name": "predict(size_t, size_t, std::vector<double *>, double *)",
+                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bart_function.cpp",
+                "line": 114,
+                "column": 14,
+                "hidden": false
+            },
+            {
+                "usr": "c:@S@f_bart@F@draw#d#&$@S@rn#",
+                "kind": 7,
+                "parent_name": "f_bart",
+                "name": "draw(double, rn &)",
+                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bart_function.cpp",
+                "line": 130,
+                "column": 14,
+                "hidden": false
+            },
+            {
+                "usr": "c:@S@f_bart@F@pr#",
+                "kind": 7,
+                "parent_name": "f_bart",
+                "name": "pr",
+                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bart_function.cpp",
+                "line": 155,
+                "column": 14,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
+        "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bart_function.h",
+        "file_last_write": 1674156965.0,
+        "definitions": [
+            {
+                "usr": "c:@S@f_bart",
+                "kind": 2,
+                "parent_name": "",
+                "name": "f_bart",
+                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bart_function.h",
+                "line": 31,
+                "column": 7,
+                "hidden": false
+            },
+            {
+                "usr": "c:@S@f_bart@F@getm#",
+                "kind": 7,
+                "parent_name": "f_bart",
+                "name": "getm",
+                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bart_function.h",
+                "line": 48,
+                "column": 11,
+                "hidden": false
+            },
+            {
+                "usr": "c:@S@f_bart@F@setpi#&$@S@pinfo#",
+                "kind": 7,
+                "parent_name": "f_bart",
+                "name": "setpi(pinfo &)",
+                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bart_function.h",
+                "line": 52,
+                "column": 9,
+                "hidden": false
+            },
+            {
+                "usr": "c:@S@f_bart@F@setprior#d#d#d#",
+                "kind": 7,
+                "parent_name": "f_bart",
+                "name": "setprior(double, double, double)",
+                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bart_function.h",
+                "line": 53,
+                "column": 9,
+                "hidden": false
+            },
+            {
+                "usr": "c:@S@f_bart@F@setdart#d#d#d#b#b#d#d#",
+                "kind": 7,
+                "parent_name": "f_bart",
+                "name": "setdart(double, double, double, bool, bool, double, double)",
+                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bart_function.h",
+                "line": 55,
+                "column": 9,
+                "hidden": false
+            },
+            {
+                "usr": "c:@S@f_bart@F@startdart#",
+                "kind": 7,
+                "parent_name": "f_bart",
+                "name": "startdart",
+                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bart_function.h",
+                "line": 68,
+                "column": 9,
+                "hidden": false
+            },
+            {
+                "usr": "c:@S@f_bart@F@settau#d#",
+                "kind": 7,
+                "parent_name": "f_bart",
+                "name": "settau(double)",
+                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bart_function.h",
+                "line": 69,
+                "column": 9,
+                "hidden": false
+            },
+            {
+                "usr": "c:@S@f_bart@F@gettree#l#",
+                "kind": 7,
+                "parent_name": "f_bart",
+                "name": "gettree(size_t)",
+                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bart_function.h",
+                "line": 70,
+                "column": 10,
+                "hidden": false
+            },
+            {
+                "usr": "c:@S@f_bart@F@getxinfo#",
+                "kind": 7,
+                "parent_name": "f_bart",
+                "name": "getxinfo",
+                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bart_function.h",
+                "line": 71,
+                "column": 11,
+                "hidden": false
+            },
+            {
+                "usr": "c:@S@f_bart@F@getnv#",
+                "kind": 7,
+                "parent_name": "f_bart",
+                "name": "getnv",
+                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bart_function.h",
+                "line": 73,
+                "column": 25,
+                "hidden": false
+            },
+            {
+                "usr": "c:@S@f_bart@F@getpv#",
+                "kind": 7,
+                "parent_name": "f_bart",
+                "name": "getpv",
+                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bart_function.h",
+                "line": 74,
+                "column": 25,
+                "hidden": false
+            },
+            {
+                "usr": "c:@S@f_bart@F@gettheta#",
+                "kind": 7,
+                "parent_name": "f_bart",
+                "name": "gettheta",
+                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bart_function.h",
+                "line": 75,
+                "column": 11,
+                "hidden": false
+            },
+            {
+                "usr": "c:@S@f_bart@F@birth#l#l#l#l#d#d#",
+                "kind": 7,
+                "parent_name": "f_bart",
+                "name": "birth(size_t, size_t, size_t, size_t, double, double)",
+                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bart_function.h",
+                "line": 78,
+                "column": 9,
+                "hidden": false
+            },
+            {
+                "usr": "c:@S@f_bart@F@death#l#l#d#",
+                "kind": 7,
+                "parent_name": "f_bart",
+                "name": "death(size_t, size_t, double)",
+                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bart_function.h",
+                "line": 80,
+                "column": 9,
+                "hidden": false
+            },
+            {
+                "usr": "c:@S@f_bart@F@tonull#",
+                "kind": 7,
+                "parent_name": "f_bart",
+                "name": "tonull",
+                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bart_function.h",
+                "line": 83,
+                "column": 9,
+                "hidden": false
+            },
+            {
+                "usr": "c:@S@f_bart@F@f#l#",
+                "kind": 7,
+                "parent_name": "f_bart",
+                "name": "f(size_t)",
+                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bart_function.h",
+                "line": 87,
+                "column": 11,
+                "hidden": false
+            }
+        ],
+        "hidden": false
+    },
+    {
         "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bartfuns.cpp",
-        "file_last_write": 1609812618.0,
+        "file_last_write": 1674156886.0,
         "definitions": [
             {
                 "usr": "c:@F@makexinfo#l#l#*d#&$@N@std@N@__1@S@vector>#$@N@std@N@__1@S@vector>#d#$@N@std@N@__1@S@allocator>#d#$@N@std@N@__1@S@allocator>#S3_#l#",
@@ -412,7 +666,7 @@
     },
     {
         "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bartfuns.h",
-        "file_last_write": 1609812618.0,
+        "file_last_write": 1674156870.0,
         "definitions": [],
         "hidden": false
     },

@@ -3,7 +3,7 @@
     "path": "~/Desktop/RCPP1/Fbart/src/bart.h",
     "project_path": "src/bart.h",
     "type": "h",
-    "hash": "588406455",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1673999782492.0,
@@ -12,8 +12,8 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "30,12",
-        "scrollLine": "19"
+        "cursorPosition": "70,3",
+        "scrollLine": "54"
     },
     "folds": "",
     "lastKnownWriteTime": 1609812618,
