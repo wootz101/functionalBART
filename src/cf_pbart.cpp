@@ -25,8 +25,8 @@
 #include "bartfuns.h"
 #include "bd.h"
 #include "bart.h"
-#include "rtnorm.h"
 #include "bart_function.h"
+#include "rtnorm.h"
 //#include "rtruncnorm.h"
 
 #ifndef NoRcpp

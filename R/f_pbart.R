@@ -16,7 +16,7 @@
 ## along with this program; if not, a copy is available at
 ## https://www.R-project.org/Licenses/GPL-2
 
-pbart=function(
+f_pbart=function(
 x.train, y.train, x.test=matrix(0.0,0,0),
 sparse=FALSE, theta=0, omega=1,
 a=0.5, b=1, augment=FALSE, rho=NULL,
@@ -144,9 +144,9 @@ res = .Call("cpbart",
             ##treesaslists,
             xinfo
 )
-    
+
 res$proc.time <- proc.time()-ptm
-    
+
 if(nkeeptrain>0) {
     ##res$yhat.train.mean <- NULL
     ##res$yhat.train.mean = res$yhat.train.mean+binaryOffset
