@@ -113,7 +113,7 @@ if((nkeeptreedraws!=0) & ((ndpost %% nkeeptreedraws) != 0)) {
 #--------------------------------------------------
 ptm <- proc.time()
 #call
-res = .Call("cpbart",
+res = .Call("cf_pbart",
             n,  #number of observations in training data
             p,  #dimension of x
             np, #number of observations in test data

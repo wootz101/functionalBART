@@ -34,7 +34,7 @@
 #define TRDRAW(a, b) trdraw(a, b)
 #define TEDRAW(a, b) tedraw(a, b)
 
-RcppExport SEXP cpbart(
+RcppExport SEXP cf_pbart(
    SEXP _in,            //number of observations in training data
    SEXP _ip,		//dimension of x
    SEXP _inp,		//number of observations in test data
@@ -127,7 +127,7 @@ RcppExport SEXP cpbart(
    //random number generation
    arn gen;
 
-   bart bm(m);
+   f_bart bm(m);
 
    if(Xinfo.size()>0) {
      xinfo _xi;
@@ -144,7 +144,7 @@ RcppExport SEXP cpbart(
 #define TRDRAW(a, b) trdraw[a][b]
 #define TEDRAW(a, b) tedraw[a][b]
 
-void cpbart(
+void cf_pbart(
    size_t n,            //number of observations in training data
    size_t p,		//dimension of x
    size_t np,		//number of observations in test data
@@ -197,7 +197,7 @@ void cpbart(
    //random number generation
    arn gen(n1, n2);
 
-   bart bm(m);
+   f_bart bm(m);
 #endif
 
 /*
