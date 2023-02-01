@@ -17,6 +17,7 @@
  *  https://www.R-project.org/Licenses/GPL-2
  */
 
+#include <iostream>
 #include <ctime>
 
 #include "tree.h"
@@ -38,9 +39,11 @@ RcppExport SEXP cf_pbart(
    SEXP _in,            //number of observations in training data
    SEXP _ip,		//dimension of x
    SEXP _inp,		//number of observations in test data
-   SEXP _ix,		//x, train,  pxn (transposed so rows are contiguous in memory)
+   SEXP _ix,		//x, train,  px(n*m) (transposed so rows are contiguous in memory)  | 2D Matrix
+
    SEXP _iy,		//y, train,  nx1
-   SEXP _ixp,		//x, test, pxnp (transposed so rows are contiguous in memory)
+   SEXP _ixp,		//x, test, px(np*m) (transposed so rows are contiguous in memory)  | Need a 2D Matrix
+
    SEXP _im,		//number of trees
    SEXP _inc,		//number of cut points
    SEXP _ind,		//number of kept draws (except for thinnning ..)
@@ -73,12 +76,34 @@ RcppExport SEXP cf_pbart(
    size_t n = Rcpp::as<int>(_in);
    size_t p = Rcpp::as<int>(_ip);
    size_t np = Rcpp::as<int>(_inp);
-   Rcpp::NumericVector  xv(_ix);
-   double *ix = &xv[0];
+
+   std::vector<double*> ix;
+   Rcpp::NumericVector  xv(_ix); // This needs to be a matrix
+    for(int i=0; i < Rcpp::as<int>(_im); i++){
+
+     ix[i] = &xv[i];
+     //Rprintf(i);
+
+     //std::cout << i << '\n';
+
+
+    }
+            // This needs to become a vector
+
    Rcpp::IntegerVector  yv(_iy); // binary
    int *iy = &yv[0];
    Rcpp::NumericVector  xpv(_ixp);
-   double *ixp = &xpv[0];
+
+
+   std::vector<double*> ixp;
+   for(int i=0; i <Rcpp::as<int>(_im); i++){
+
+     ixp[i] = &xpv[i];
+
+     //printf(i);
+
+   } // Changed to a double vector, need the pointer for a vector
+
    size_t m = Rcpp::as<int>(_im);
    //size_t nc = Rcpp::as<int>(_inc);
    Rcpp::IntegerVector _nc(_inc);
@@ -148,9 +173,9 @@ void cf_pbart(
    size_t n,            //number of observations in training data
    size_t p,		//dimension of x
    size_t np,		//number of observations in test data
-   double* ix,		//x, train,  pxn (transposed so rows are contiguous in memory)
+   std::vector<double*> ix,		//x, train,  pxn (transposed so rows are contiguous in memory)
    int* iy,		//y, train,  nx1
-   double* ixp,		//x, test, pxnp (transposed so rows are contiguous in memory)
+   std::vector<double*> ixp,		//x, test, pxnp (transposed so rows are contiguous in memory)
    size_t m,		//number of trees
    int *numcut, //size_t nc,		//number of cut points
    size_t nd,		//number of kept draws (except for thinnning ..)

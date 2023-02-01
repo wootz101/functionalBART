@@ -60,6 +60,7 @@ else {
     grp <- NULL
 }
 
+print(dim(x.train))
 if(n!=ncol(x.train))
     stop('The length of y.train and the number of rows in x.train must be identical')
 
@@ -144,9 +145,9 @@ res = .Call("cpbart",
             ##treesaslists,
             xinfo
 )
-    
+
 res$proc.time <- proc.time()-ptm
-    
+
 if(nkeeptrain>0) {
     ##res$yhat.train.mean <- NULL
     ##res$yhat.train.mean = res$yhat.train.mean+binaryOffset

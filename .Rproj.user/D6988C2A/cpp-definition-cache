@@ -255,7 +255,7 @@
     },
     {
         "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bart_function.cpp",
-        "file_last_write": 1674157089.0,
+        "file_last_write": 1674847360.0,
         "definitions": [
             {
                 "usr": "c:@S@f_bart@F@operator=#&1$@S@f_bart#",
@@ -342,7 +342,7 @@
     },
     {
         "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/bart_function.h",
-        "file_last_write": 1674156965.0,
+        "file_last_write": 1674768486.0,
         "definitions": [
             {
                 "usr": "c:@S@f_bart",
@@ -694,107 +694,26 @@
         "hidden": false
     },
     {
-        "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/cabart.cpp",
-        "file_last_write": 1609812618.0,
-        "definitions": [
-            {
-                "usr": "c:cabart.cpp@1043@macro@TRDRAW",
-                "kind": 9,
-                "parent_name": "",
-                "name": "TRDRAW",
-                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/cabart.cpp",
-                "line": 34,
-                "column": 9,
-                "hidden": false
-            },
-            {
-                "usr": "c:cabart.cpp@1077@macro@TEDRAW",
-                "kind": 9,
-                "parent_name": "",
-                "name": "TEDRAW",
-                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/cabart.cpp",
-                "line": 35,
-                "column": 9,
-                "hidden": false
-            }
-        ],
-        "hidden": false
-    },
-    {
         "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/cf_pbart.cpp",
-        "file_last_write": 1674686452.0,
+        "file_last_write": 1675109206.0,
         "definitions": [
             {
-                "usr": "c:cf_pbart.cpp@1034@macro@TRDRAW",
+                "usr": "c:cf_pbart.cpp@1054@macro@TRDRAW",
                 "kind": 9,
                 "parent_name": "",
                 "name": "TRDRAW",
                 "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/cf_pbart.cpp",
-                "line": 34,
+                "line": 35,
                 "column": 9,
                 "hidden": false
             },
             {
-                "usr": "c:cf_pbart.cpp@1068@macro@TEDRAW",
+                "usr": "c:cf_pbart.cpp@1088@macro@TEDRAW",
                 "kind": 9,
                 "parent_name": "",
                 "name": "TEDRAW",
                 "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/cf_pbart.cpp",
-                "line": 35,
-                "column": 9,
-                "hidden": false
-            }
-        ],
-        "hidden": false
-    },
-    {
-        "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/cgbart.cpp",
-        "file_last_write": 1609812618.0,
-        "definitions": [
-            {
-                "usr": "c:cgbart.cpp@1043@macro@TRDRAW",
-                "kind": 9,
-                "parent_name": "",
-                "name": "TRDRAW",
-                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/cgbart.cpp",
-                "line": 34,
-                "column": 9,
-                "hidden": false
-            },
-            {
-                "usr": "c:cgbart.cpp@1077@macro@TEDRAW",
-                "kind": 9,
-                "parent_name": "",
-                "name": "TEDRAW",
-                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/cgbart.cpp",
-                "line": 35,
-                "column": 9,
-                "hidden": false
-            }
-        ],
-        "hidden": false
-    },
-    {
-        "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/clbart.cpp",
-        "file_last_write": 1609812618.0,
-        "definitions": [
-            {
-                "usr": "c:clbart.cpp@1091@macro@TRDRAW",
-                "kind": 9,
-                "parent_name": "",
-                "name": "TRDRAW",
-                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/clbart.cpp",
                 "line": 36,
-                "column": 9,
-                "hidden": false
-            },
-            {
-                "usr": "c:clbart.cpp@1125@macro@TEDRAW",
-                "kind": 9,
-                "parent_name": "",
-                "name": "TEDRAW",
-                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/clbart.cpp",
-                "line": 37,
                 "column": 9,
                 "hidden": false
             }
@@ -892,200 +811,6 @@
         "hidden": false
     },
     {
-        "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/cpwbart.cpp",
-        "file_last_write": 1609812618.0,
-        "definitions": [
-            {
-                "usr": "c:cpwbart.cpp@T@vtree",
-                "kind": 8,
-                "parent_name": "",
-                "name": "vtree",
-                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/cpwbart.cpp",
-                "line": 23,
-                "column": 27,
-                "hidden": false
-            },
-            {
-                "usr": "c:@F@getpred#I#I#l#l#l#&$@N@std@N@__1@S@vector>#$@N@std@N@__1@S@vector>#d#$@N@std@N@__1@S@allocator>#d#$@N@std@N@__1@S@allocator>#S2_#&$@N@std@N@__1@S@vector>#$@N@std@N@__1@S@vector>#$@S@tree#$@N@std@N@__1@S@allocator>#S8_#$@N@std@N@__1@S@allocator>#S7_#*d#&$@N@Rcpp@S@Matrix>#VI14#@N@Rcpp@ST>1#T@PreserveStorage#",
-                "kind": 6,
-                "parent_name": "",
-                "name": "getpred(int, int, size_t, size_t, size_t, xinfo &, std::vector<vtree> &, double *, Rcpp::NumericMatrix &)",
-                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/cpwbart.cpp",
-                "line": 105,
-                "column": 6,
-                "hidden": false
-            }
-        ],
-        "hidden": false
-    },
-    {
-        "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/cwbart.cpp",
-        "file_last_write": 1609812618.0,
-        "definitions": [
-            {
-                "usr": "c:cwbart.cpp@966@macro@TRDRAW",
-                "kind": 9,
-                "parent_name": "",
-                "name": "TRDRAW",
-                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/cwbart.cpp",
-                "line": 30,
-                "column": 9,
-                "hidden": false
-            },
-            {
-                "usr": "c:cwbart.cpp@1000@macro@TEDRAW",
-                "kind": 9,
-                "parent_name": "",
-                "name": "TEDRAW",
-                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/cwbart.cpp",
-                "line": 31,
-                "column": 9,
-                "hidden": false
-            }
-        ],
-        "hidden": false
-    },
-    {
-        "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/heterbart.cpp",
-        "file_last_write": 1609812618.0,
-        "definitions": [
-            {
-                "usr": "c:@S@heterbart@F@pr#",
-                "kind": 7,
-                "parent_name": "heterbart",
-                "name": "pr",
-                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/heterbart.cpp",
-                "line": 23,
-                "column": 17,
-                "hidden": false
-            },
-            {
-                "usr": "c:@S@heterbart@F@draw#*d#&$@S@rn#",
-                "kind": 7,
-                "parent_name": "heterbart",
-                "name": "draw(double *, rn &)",
-                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/heterbart.cpp",
-                "line": 29,
-                "column": 17,
-                "hidden": false
-            }
-        ],
-        "hidden": false
-    },
-    {
-        "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/heterbart.h",
-        "file_last_write": 1609812618.0,
-        "definitions": [
-            {
-                "usr": "c:@S@heterbart",
-                "kind": 2,
-                "parent_name": "",
-                "name": "heterbart",
-                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/heterbart.h",
-                "line": 26,
-                "column": 7,
-                "hidden": false
-            }
-        ],
-        "hidden": false
-    },
-    {
-        "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/heterbartfuns.cpp",
-        "file_last_write": 1609812618.0,
-        "definitions": [
-            {
-                "usr": "c:@F@heterlh#d#d#d#",
-                "kind": 6,
-                "parent_name": "",
-                "name": "heterlh(double, double, double)",
-                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/heterbartfuns.cpp",
-                "line": 24,
-                "column": 8,
-                "hidden": false
-            },
-            {
-                "usr": "c:@F@hetergetsuff#&$@S@tree#*S1_#l#l#&$@N@std@N@__1@S@vector>#$@N@std@N@__1@S@vector>#d#$@N@std@N@__1@S@allocator>#d#$@N@std@N@__1@S@allocator>#S5_#&$@S@dinfo#&l#&d#S11_#S10_#S11_#S11_#*d#",
-                "kind": 6,
-                "parent_name": "",
-                "name": "hetergetsuff(tree &, tree::tree_p, size_t, size_t, xinfo &, dinfo &, size_t &, double &, double &, size_t &, double &, double &, double *)",
-                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/heterbartfuns.cpp",
-                "line": 31,
-                "column": 6,
-                "hidden": false
-            },
-            {
-                "usr": "c:@F@hetergetsuff#&$@S@tree#*S1_#S2_#&$@N@std@N@__1@S@vector>#$@N@std@N@__1@S@vector>#d#$@N@std@N@__1@S@allocator>#d#$@N@std@N@__1@S@allocator>#S5_#&$@S@dinfo#&d#S10_#S10_#S10_#*d#",
-                "kind": 6,
-                "parent_name": "",
-                "name": "hetergetsuff(tree &, tree::tree_p, tree::tree_p, xinfo &, dinfo &, double &, double &, double &, double &, double *)",
-                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/heterbartfuns.cpp",
-                "line": 55,
-                "column": 6,
-                "hidden": false
-            },
-            {
-                "usr": "c:@F@heterdrawnodemu#d#d#d#&$@S@rn#",
-                "kind": 6,
-                "parent_name": "",
-                "name": "heterdrawnodemu(double, double, double, rn &)",
-                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/heterbartfuns.cpp",
-                "line": 79,
-                "column": 8,
-                "hidden": false
-            },
-            {
-                "usr": "c:@F@heterallsuff#&$@S@tree#&$@N@std@N@__1@S@vector>#$@N@std@N@__1@S@vector>#d#$@N@std@N@__1@S@allocator>#d#$@N@std@N@__1@S@allocator>#S4_#&$@S@dinfo#&$@N@std@N@__1@S@vector>#*S1_#$@N@std@N@__1@S@allocator>#S11_#&S4_#S13_#*d#",
-                "kind": 6,
-                "parent_name": "",
-                "name": "heterallsuff(tree &, xinfo &, dinfo &, tree::npv &, std::vector<double> &, std::vector<double> &, double *)",
-                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/heterbartfuns.cpp",
-                "line": 87,
-                "column": 6,
-                "hidden": false
-            },
-            {
-                "usr": "c:@F@heterdrmu#&$@S@tree#&$@N@std@N@__1@S@vector>#$@N@std@N@__1@S@vector>#d#$@N@std@N@__1@S@allocator>#d#$@N@std@N@__1@S@allocator>#S4_#&$@S@dinfo#&$@S@pinfo#*d#&$@S@rn#",
-                "kind": 6,
-                "parent_name": "",
-                "name": "heterdrmu(tree &, xinfo &, dinfo &, pinfo &, double *, rn &)",
-                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/heterbartfuns.cpp",
-                "line": 117,
-                "column": 6,
-                "hidden": false
-            }
-        ],
-        "hidden": false
-    },
-    {
-        "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/heterbartfuns.h",
-        "file_last_write": 1609812618.0,
-        "definitions": [],
-        "hidden": false
-    },
-    {
-        "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/heterbd.cpp",
-        "file_last_write": 1609812618.0,
-        "definitions": [
-            {
-                "usr": "c:@F@heterbd#&$@S@tree#&$@N@std@N@__1@S@vector>#$@N@std@N@__1@S@vector>#d#$@N@std@N@__1@S@allocator>#d#$@N@std@N@__1@S@allocator>#S4_#&$@S@dinfo#&$@S@pinfo#*d#&$@N@std@N@__1@S@vector>#l#$@N@std@N@__1@S@allocator>#l#&S4_#b#&$@S@rn#",
-                "kind": 6,
-                "parent_name": "",
-                "name": "heterbd(tree &, xinfo &, dinfo &, pinfo &, double *, std::vector<size_t> &, std::vector<double> &, bool, rn &)",
-                "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/heterbd.cpp",
-                "line": 22,
-                "column": 6,
-                "hidden": false
-            }
-        ],
-        "hidden": false
-    },
-    {
-        "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/heterbd.h",
-        "file_last_write": 1609812618.0,
-        "definitions": [],
-        "hidden": false
-    },
-    {
         "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/info.h",
         "file_last_write": 1609812618.0,
         "definitions": [
@@ -1124,7 +849,7 @@
     },
     {
         "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/init.c",
-        "file_last_write": 1609812618.0,
+        "file_last_write": 1675103271.0,
         "definitions": [
             {
                 "usr": "c:@F@R_init_BART#*$@S@_DllInfo#",
@@ -1132,7 +857,7 @@
                 "parent_name": "",
                 "name": "R_init_BART(DllInfo *)",
                 "file": "/Users/Wootz/Desktop/RCPP1/Fbart/src/init.c",
-                "line": 44,
+                "line": 46,
                 "column": 6,
                 "hidden": false
             }

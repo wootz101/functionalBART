@@ -26,16 +26,31 @@ f_bartModelMatrix=function(X, numcut=0L, usequants=FALSE, type=7,
                          rm.const=FALSE, cont=FALSE, xinfo=NULL) {
 
 
-
+  n = dim(X)[1]
+  p = dim(X)[2]
   m = dim(X)[3]
 
-  newX = array(dim = c(dim(X)))
+  newX = array(dim = c(n*m, p ))
+
+
   for (i in 1:m) {
 
-    newX[,,i] = bartModelMatrix(X[,,i], numcut, usequants, type,
-                                rm.const, cont, xinfo)
 
+    print(i)
+    temp = bartModelMatrix(X[,,i], numcut, usequants, type,
+                           rm.const, cont, xinfo)
+    #print(dim(newX))
+    #print(dim(temp$X))
+    #print(dim(newX[((m-1)*n+1):(m*n),]))
+    newX[((m-1)*n+1):(m*n),] = temp$X
+
+
+
+    #newX[,,i] = temp
   }
 
-  return(newX)
+  temp$X = newX
+
+
+  return(temp)
 }

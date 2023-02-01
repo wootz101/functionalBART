@@ -40,7 +40,7 @@ n = length(y.train)
 if(length(binaryOffset)==0) binaryOffset=qnorm(mean(y.train))
 
 if(!transposed) {
-    temp = bartModelMatrix(x.train, numcut, usequants=usequants,
+    temp = f_bartModelMatrix(x.train, numcut, usequants=usequants,
                            cont=cont, xinfo=xinfo, rm.const=rm.const)
     x.train = t(temp$X)
     numcut = temp$numcut
@@ -48,7 +48,7 @@ if(!transposed) {
     ## if(length(x.test)>0)
     ##         x.test = t(bartModelMatrix(x.test[ , temp$rm.const]))
         if(length(x.test)>0) {
-            x.test = bartModelMatrix(x.test)
+            x.test = f_bartModelMatrix(x.test)
             x.test = t(x.test[ , temp$rm.const])
         }
     rm.const <- temp$rm.const
@@ -60,7 +60,8 @@ else {
     grp <- NULL
 }
 
-if(n!=ncol(x.train))
+print(dim(x.train))
+if(n!=  (ncol(x.train)/ntree) )
     stop('The length of y.train and the number of rows in x.train must be identical')
 
 p = nrow(x.train)
@@ -111,15 +112,18 @@ if((nkeeptreedraws!=0) & ((ndpost %% nkeeptreedraws) != 0)) {
 ##    tau = sigmaf/sqrt(ntree)
 ## }
 #--------------------------------------------------
+
+print("CALL C++ TIME: ")
+Sys.sleep(1)
 ptm <- proc.time()
 #call
 res = .Call("cf_pbart",
             n,  #number of observations in training data
             p,  #dimension of x
             np, #number of observations in test data
-            x.train,   #p*n training data x
+            x.train,   #p*n*m training data x !!! Updated to 3d matrix
             y.train,   #n*1 training data y
-            x.test,    #p*np test data x
+            x.test,    #p*np*m test data x
             ntree,
             numcut,
             ndpost*keepevery,
@@ -146,6 +150,8 @@ res = .Call("cf_pbart",
 )
 
 res$proc.time <- proc.time()-ptm
+
+print("END C++ TIME: ")
 
 if(nkeeptrain>0) {
     ##res$yhat.train.mean <- NULL
