@@ -8,6 +8,9 @@ cat("\014")
 ### Clear Environment ###
 rm(list = ls(all = TRUE))
 #setwd("~/Desktop/Functional Data")
+
+
+
 library(FADPclust)
 library(fda)
 library(tidyverse)
@@ -110,7 +113,12 @@ source("~/Desktop/RCPP1/Fbart/R/bartModelMatrix.R")
 
 
 
-m1 = pbart(X[,,1],y)
+#m1 = pbart(X[,,1],y)
+
+#m2 = f_pbart_minimal(X, y, ntree=10)
+
+
+
 
 m2 = f_pbart(X, y, ntree=10)
 
@@ -118,6 +126,17 @@ m2 = f_pbart(X, y, ntree=10)
 # //Rprintf("sdraw %f \n", sdraw(iter, k));
 
 # See return matrix of 10 different average partitions
+
+
+
+
+
+
+
+
+
+
+
 
 
 t(X[,,1])
@@ -135,9 +154,12 @@ nX = f_bartModelMatrix(X, xinfo=matrix(0.0,0,0), usequants=FALSE, type=7,
                        rm.const=TRUE, cont=FALSE, numcut=100L)
 nX
 
-nX$numcut
+nX$X
+nX$X[[1]]
 
 nX
+
+nX2 = f_bartModelMatrix(X)
 
 library(BART)
 
