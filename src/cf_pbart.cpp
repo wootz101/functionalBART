@@ -72,7 +72,7 @@ RcppExport SEXP cf_pbart(
 )
 {
 
-<<<<<<< HEAD
+
   //--------------------------------------------------
   //process args
   //std::this_thread::sleep_for(1s);
@@ -113,34 +113,7 @@ RcppExport SEXP cf_pbart(
   } // Changed to a double vector, need the pointer for a vector
   printf("End Loop\n");
 
-=======
-   //--------------------------------------------------
-   //process args
-   size_t n = Rcpp::as<int>(_in);
-   size_t p = Rcpp::as<int>(_ip);
-   size_t np = Rcpp::as<int>(_inp);
-   Rcpp::List x_Matrix(_ix);
-   std::vector<double*> ix;
-    // This needs to be a matrix
-  for(int i=0; i < Rcpp::as<int>(_im); i++){
-      Rcpp::NumericVector xv(Rcpp::as<Rcpp::NumericVector>(x_Matrix[i]));
-      ix[i] = &xv[0];
-     //Rprintf(i);
 
-     //std::cout << i << '\n';
-
-
-    }
-            // This needs to become a vector
-
-   Rcpp::IntegerVector  yv(_iy); // binary
-   int *iy = &yv[0];
-   Rcpp::List xp_Matrix(_ixp);
-   std::vector<double*> ixp;
-   for(int i=0; i <Rcpp::as<int>(_im); i++){
-     Rcpp::NumericVector  xpv(_ixp);
-     ixp[i] = &xpv[0];
->>>>>>> cd2f79906aa152761b9517840078c787ad3472d9
 
 
 
@@ -300,7 +273,7 @@ RcppExport SEXP cf_pbart(
     if(nkeeptreedraws) {skiptreedraws = nd/nkeeptreedraws;}
     else skiptreedraws=nd+1;
 
-<<<<<<< HEAD
+
     //--------------------------------------------------
     //print args
     printf("*****Data:\n");
@@ -328,35 +301,7 @@ RcppExport SEXP cf_pbart(
     printf("*****printevery: %zu\n",printevery);
     //printf("*****skiptr,skipte,skipteme,skiptreedraws: %zu,%zu,%zu,%zu\n",skiptr,skipte,skipteme,skiptreedraws);
     printf("*****skiptr,skipte,skiptreedraws: %zu,%zu,%zu\n",skiptr,skipte,skiptreedraws);
-=======
-   //--------------------------------------------------
-   //print args
-   printf("*****Data:\n");
-   printf("data:n,p,np: %zu, %zu, %zu\n",n,p,np);
-   printf("y1,yn: %d, %d\n",iy[0],iy[n-1]);
-   printf("x1,x[n*p]: %lf, %lf\n",ix[0][0],ix[m-1][n*p-1]);
-   //printf("x1,x[n*p]: %lf, %lf\n",ix[0][1],ix[n*p-1][1]);
-   //printf("x1,x[n*p]: %lf, %lf\n",ix[0][1],ix[n*p-1][1]);
-   //if(np) printf("xp1,xp[np*p]: %lf, %lf\n",ixp[0],ixp[np*p-1]);
-   printf("*****Number of Trees: %zu\n",m);
-   printf("*****Number of Cut Points: %d ... %d\n", numcut[0], numcut[p-1]);
-   printf("*****burn and ndpost: %zu, %zu\n",burn,nd);
-   printf("*****Prior:mybeta,alpha,tau: %lf,%lf,%lf\n",
-                   mybeta,alpha,tau);
-   printf("*****binaryOffset: %lf\n",binaryOffset);
-   cout << "*****Dirichlet:sparse,theta,omega,a,b,rho,augment: "
-	<< dart << ',' << theta << ',' << omega << ',' << a << ','
-	<< b << ',' << rho << ',' << aug << endl;
-   printf("*****nkeeptrain,nkeeptest,nkeeptreedraws: %zu,%zu,%zu\n",
-               nkeeptrain,nkeeptest,nkeeptreedraws);
-/*
-   printf("*****nkeeptrain,nkeeptest,nkeeptestme,nkeeptreedraws: %zu,%zu,%zu,%zu\n",
-               nkeeptrain,nkeeptest,nkeeptestme,nkeeptreedraws);
-*/
-   printf("*****printevery: %zu\n",printevery);
-   //printf("*****skiptr,skipte,skipteme,skiptreedraws: %zu,%zu,%zu,%zu\n",skiptr,skipte,skipteme,skiptreedraws);
-   printf("*****skiptr,skipte,skiptreedraws: %zu,%zu,%zu\n",skiptr,skipte,skiptreedraws);
->>>>>>> cd2f79906aa152761b9517840078c787ad3472d9
+
 
     //--------------------------------------------------
     //bart bm(m);
