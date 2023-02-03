@@ -42,7 +42,11 @@ f_pbart=function(
 
   if(!transposed) {
     temp = f_bartModelMatrix(x.train, numcut, usequants=usequants,
+<<<<<<< HEAD
                              cont=cont, xinfo=xinfo, rm.const=rm.const)
+=======
+                           cont=cont, xinfo=xinfo, rm.const=rm.const)
+>>>>>>> cd2f79906aa152761b9517840078c787ad3472d9
     x.train = lapply(temp$X, t)
     numcut = temp$numcut
     xinfo = temp$xinfo
@@ -62,6 +66,7 @@ f_pbart=function(
     grp <- NULL
   }
 
+<<<<<<< HEAD
   #print(dim(x.train))
   if(n!=  (ncol(x.train[[1]])) )
     stop('The length of y.train and the number of rows in x.train must be identical')
@@ -71,6 +76,17 @@ f_pbart=function(
   if(length(rho)==0) rho <- p
   if(length(rm.const)==0) rm.const <- 1:p
   if(length(grp)==0) grp <- 1:p
+=======
+#print(dim(x.train))
+if(n!=  (ncol(x.train[[1]])) )
+    stop('The length of y.train and the number of rows in x.train must be identical')
+
+p = nrow(x.train[[1]])
+np = 0 #ncol(x.test[[1]])
+if(length(rho)==0) rho <- p
+if(length(rm.const)==0) rm.const <- 1:p
+if(length(grp)==0) grp <- 1:p
+>>>>>>> cd2f79906aa152761b9517840078c787ad3472d9
 
   #--------------------------------------------------
   #set  nkeeps for thinning
