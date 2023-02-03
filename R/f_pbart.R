@@ -42,7 +42,7 @@ if(length(binaryOffset)==0) binaryOffset=qnorm(mean(y.train))
 if(!transposed) {
     temp = f_bartModelMatrix(x.train, numcut, usequants=usequants,
                            cont=cont, xinfo=xinfo, rm.const=rm.const)
-    x.train = t(temp$X)
+    x.train = lapply(temp$X, t)
     numcut = temp$numcut
     xinfo = temp$xinfo
     ## if(length(x.test)>0)
@@ -60,12 +60,12 @@ else {
     grp <- NULL
 }
 
-print(dim(x.train))
-if(n!=  (ncol(x.train)/ntree) )
+#print(dim(x.train))
+if(n!=  (ncol(x.train[[1]])) )
     stop('The length of y.train and the number of rows in x.train must be identical')
 
-p = nrow(x.train)
-np = ncol(x.test)
+p = nrow(x.train[[1]])
+np = 0 #ncol(x.test[[1]])
 if(length(rho)==0) rho <- p
 if(length(rm.const)==0) rm.const <- 1:p
 if(length(grp)==0) grp <- 1:p

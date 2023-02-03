@@ -30,7 +30,7 @@ f_bartModelMatrix=function(X, numcut=0L, usequants=FALSE, type=7,
   p = dim(X)[2]
   m = dim(X)[3]
 
-  newX = array(dim = c(n*m, p ))
+  newX = list(dim = c(n*m, p ))
 
 
   for (i in 1:m) {
@@ -42,7 +42,7 @@ f_bartModelMatrix=function(X, numcut=0L, usequants=FALSE, type=7,
     #print(dim(newX))
     #print(dim(temp$X))
     #print(dim(newX[((m-1)*n+1):(m*n),]))
-    newX[((m-1)*n+1):(m*n),] = temp$X
+    newX[[i]] = temp$X
 
 
 

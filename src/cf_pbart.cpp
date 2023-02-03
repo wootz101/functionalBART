@@ -76,12 +76,12 @@ RcppExport SEXP cf_pbart(
    size_t n = Rcpp::as<int>(_in);
    size_t p = Rcpp::as<int>(_ip);
    size_t np = Rcpp::as<int>(_inp);
-
+   Rcpp::List x_Matrix(_ix);
    std::vector<double*> ix;
-   Rcpp::NumericVector  xv(_ix); // This needs to be a matrix
-    for(int i=0; i < Rcpp::as<int>(_im); i++){
-
-     ix[i] = &xv[i];
+    // This needs to be a matrix
+  for(int i=0; i < Rcpp::as<int>(_im); i++){
+      Rcpp::NumericVector xv(Rcpp::as<Rcpp::NumericVector>(x_Matrix[i]));
+      ix[i] = &xv[0];
      //Rprintf(i);
 
      //std::cout << i << '\n';
@@ -92,13 +92,11 @@ RcppExport SEXP cf_pbart(
 
    Rcpp::IntegerVector  yv(_iy); // binary
    int *iy = &yv[0];
-   Rcpp::NumericVector  xpv(_ixp);
-
-
+   Rcpp::List xp_Matrix(_ixp);
    std::vector<double*> ixp;
    for(int i=0; i <Rcpp::as<int>(_im); i++){
-
-     ixp[i] = &xpv[i];
+     Rcpp::NumericVector  xpv(_ixp);
+     ixp[i] = &xpv[0];
 
      //printf(i);
 
@@ -259,8 +257,10 @@ void cf_pbart(
    printf("*****Data:\n");
    printf("data:n,p,np: %zu, %zu, %zu\n",n,p,np);
    printf("y1,yn: %d, %d\n",iy[0],iy[n-1]);
-   printf("x1,x[n*p]: %lf, %lf\n",ix[0],ix[n*p-1]);
-   if(np) printf("xp1,xp[np*p]: %lf, %lf\n",ixp[0],ixp[np*p-1]);
+   printf("x1,x[n*p]: %lf, %lf\n",ix[0][0],ix[m-1][n*p-1]);
+   //printf("x1,x[n*p]: %lf, %lf\n",ix[0][1],ix[n*p-1][1]);
+   //printf("x1,x[n*p]: %lf, %lf\n",ix[0][1],ix[n*p-1][1]);
+   //if(np) printf("xp1,xp[np*p]: %lf, %lf\n",ixp[0],ixp[np*p-1]);
    printf("*****Number of Trees: %zu\n",m);
    printf("*****Number of Cut Points: %d ... %d\n", numcut[0], numcut[p-1]);
    printf("*****burn and ndpost: %zu, %zu\n",burn,nd);
